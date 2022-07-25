@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+''' function multiplies 2 matrices '''
 
 
 def mat_mul(mat1, mat2):

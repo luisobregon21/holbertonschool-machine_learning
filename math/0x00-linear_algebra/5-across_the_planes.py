@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+''' Add two matrices of integers '''
 
 
 def add_matrices2D(mat1, mat2):

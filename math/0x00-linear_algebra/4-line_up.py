@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+''' Add two arrays of integers '''
 
 
 def add_arrays(arr1, arr2):
