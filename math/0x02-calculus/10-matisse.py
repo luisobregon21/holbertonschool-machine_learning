@@ -9,7 +9,7 @@ def poly_derivative(poly):
     coefficient belongs to
     example: if f(x) = x^3 + 3x +5, poly is equal to [5, 3, 0, 1]
     '''
-    if not isinstance(poly, list) or len(poly) < 1:
+    if not isinstance(poly, list) or len(poly) < 1 or poly is None:
         return None
 
     if not any(isinstance(val, int) for val in poly):
