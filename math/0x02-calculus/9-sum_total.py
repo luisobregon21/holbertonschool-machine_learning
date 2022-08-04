@@ -7,10 +7,6 @@ def summation_i_squared(n):
     calculate sigma sum:
     i = 1, n=n, i^2
     '''
-
-    if n == 1:
-        return 1
-    elif n > 0:
-        return int((n**2) + (summation_i_squared(n-1)))
-    else:
-        return None
+    if n > 0:
+        return int(n*(n+1)*((2*n)+1)/6)
+    return None
