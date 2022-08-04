@@ -8,9 +8,9 @@ def summation_i_squared(n):
     i = 1, n=n, i^2
     '''
 
-    if not isinstance(n, int) or n < 1:
-        return None
-
     if n == 1:
         return 1
-    return int((n**2) + (summation_i_squared(n-1)))
+    elif n > 0:
+        return int((n**2) + (summation_i_squared(n-1)))
+    else:
+        return None
