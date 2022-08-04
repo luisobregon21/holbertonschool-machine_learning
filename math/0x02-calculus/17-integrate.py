@@ -13,22 +13,27 @@ def poly_integral(poly, C=0):
     if poly is None or poly == [] or type(poly) != list:
         return None
 
-    if not isinstance(C, (int, float)):
-        return None
+    if type(C) is int or type(C) is float:
+        if poly == [0]:
+            return [C]
 
-    if not any(isinstance(val, (int, float)) for val in poly):
-        return None
+        if C % 1 == 0:
+            C = int(C)
+        integral = [C]
 
-    # C is an integer representing the integration constant
-    if isinstance(C, float) and C.is_integer:
-        C = int(C)
+        for power in range(len(poly)):
+            if type(poly[power]) != int and type(poly[power]) != float:
+                return None
 
-    integral = [C]
+            if (poly[power] / (power + 1)) % 1 == 0:
+                integral.append(int(poly[power] / (power + 1)))
+            else:
+                integral.append(poly[power] / (power + 1))
 
-    for power, coefficient in enumerate(poly):
-        if (coefficient % (power + 1)) == 0:
-            newCoefficient = coefficient // (power + 1)
-        else:
-            newCoefficient = coefficient / (power + 1)
-        integral.append(newCoefficient)
-    return integral
+        for power in range(len(integral) - 1, 0, -1):
+            if integral[power] == 0:
+                integral.pop()
+            else:
+                break
+        return integral
+    return None
