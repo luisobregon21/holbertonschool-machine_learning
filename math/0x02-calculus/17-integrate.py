@@ -10,7 +10,7 @@ def poly_integral(poly, C=0):
      if f(x) = x^3 + 3x +5, poly is equal to [5, 3, 0, 1]
     '''
 
-    if not isinstance(poly, list) or len(poly) < 1:
+    if poly is None or poly == [] or type(poly) != list:
         return None
 
     if not isinstance(C, (int, float)):
