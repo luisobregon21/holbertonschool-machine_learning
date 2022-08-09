@@ -25,7 +25,7 @@ class Normal():
             self.mean = float(mean)
             self.stddev = float(stddev)
         else:
-            if type(data) is not list:
+            if not isinstance(data, list):
                 raise TypeError("data must be a list")
             elif len(data) < 2:
                 raise ValueError("data must contain multiple values")
@@ -38,23 +38,23 @@ class Normal():
 
     def z_score(self, x):
         '''
-        x: x_value of the function
-        return: the z_score
+        method finds the z score
+        :x: is the x-value
         '''
 
         return (x - self.mean) / self.stddev
 
     def x_value(self, z):
         '''
-        z: z value of the x value replica
-        return: x_value
+        method Calculates the x-value of a given z-score
+        :z: is the z-score
         '''
         return self.stddev * z + self.mean
 
     def pdf(self, x):
         '''
-        x: the x parameter of the function
-        return: Probability Density Function
+        method Calculates the value of the PDF for a given x-value
+        :x: is the x-value
         '''
 
         p1 = 1 / (self.stddev * ((2 * Normal.pi) ** 0.5))
@@ -63,12 +63,12 @@ class Normal():
 
     def cdf(self, x):
         '''
-        param x: x parameter of the function
-        return:  Cumulative distribution Function
+        method calculates the value of the CDF for a given x-value
+        :x: is the x-value
         '''
-        xa = (x - self.mean) / ((2 ** 0.5) * self.stddev)
-        errof = (((4 / Normal.pi) ** 0.5) * (xa - (xa ** 3) / 3 +
-                                             (xa ** 5) / 10 - (xa ** 7) / 42 +
-                                             (xa ** 9) / 216))
+        cu = (x - self.mean) / ((2 ** 0.5) * self.stddev)
+        errof = (((4 / Normal.pi) ** 0.5) * (cu - (cu ** 3) / 3 +
+                                             (cu ** 5) / 10 - (cu ** 7) / 42 +
+                                             (cu ** 9) / 216))
         cdf = (1 + errof) / 2
         return cdf
