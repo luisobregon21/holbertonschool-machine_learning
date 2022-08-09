@@ -5,7 +5,7 @@ module has Exponential that represents an exponential distribution
 
 
 class Exponential():
-    ''' 
+    '''
     class to represent Exponential distribution.
     models the time elapsed between events.
     '''
@@ -30,7 +30,7 @@ class Exponential():
                 raise TypeError("data must be a list")
             elif len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            self.lambtha = (sum(data) / len(data))
+            self.lambtha = (1 / (sum(data) / len(data)))
 
     def pdf(self, x):
         '''
@@ -41,6 +41,8 @@ class Exponential():
         if x < 0:
             return 0
 
+#             pdf = self.lambtha * (Exponential.e**((-self.lambtha) * x))
+#             return pdf
         pdf = self.lambtha * (Exponential.e ** ((-self.lambtha) * x))
         return pdf
 

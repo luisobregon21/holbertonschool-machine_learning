@@ -5,7 +5,7 @@ module has Poisson that represents a poisson distribution
 
 
 class Poisson():
-    ''' 
+    '''
     class to represent poisson distribution.
     Calculates probabilities of various number
     of "success" based on the mean nmumber of success.
