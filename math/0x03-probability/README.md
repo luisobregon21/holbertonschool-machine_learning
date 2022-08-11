@@ -13,7 +13,6 @@ What is probability?
 - 0 indicates impossibility of the event and 1 indicates certainty
     ![probability](https://onlinestatbook.com/2/probability/graphics/simple_prob.gif)
 
-
 Basic probability notation
 
 - U -> OR, whats the probability one event or another will happen
@@ -122,6 +121,71 @@ follows it closely, but not perfectly (which is usual).
   - 50% of values less than the mean and 50% greater than the mean
 
 ![another Normal Distribution](https://www.mathsisfun.com/data/images/normal-distribution-2.svg)
+
+## More info on probability
+
+### Discrete Distribution
+
+Discrete random variables are described with a probability mass function (PMF). A PMF maps each value in the variable’s sample space to a probability.
+
+- One such PMF is the uniform distribution over n possible outcomes: P(x=x) = 1/n.
+  - This reads as “The probability of x taking on the value x is 1 divided by the number of possible values”.
+
+- uniform distribution -> each outcome is equally likely
+
+#### Bernoulli distribution
+
+specifies the probability for a random variable which can take on one of two values (1/0, heads/tails, true/false, rain/no rain, etc.).
+
+PMF of a Bernoulli distribution is P(x) = {p if x =1, and 1-p if x=0}.
+
+### Continuous Distributions
+
+Continuous random variables are described by probability density functions (PDF).
+
+Generally indicated the PDF for a random variable x as f(x). PDFs map an infinite sample space to relative likelihood values.
+
+#### Gaussian (Normal) distribution
+
+AKA the bell curve. The Gaussian distribution is parameterized by two values: the mean μ (mu) and variance σ² (sigma squared).
+
+The mean specifies the center of the distribution, and the variance specifies the width of the distribution.
+
+standard deviation σ, is just the square root of the variance.
+
+indicate that x is a random variable:
+
+![formula](https://miro.medium.com/max/618/1*b6yxU4ivLewyufRtxjpXOw.png)
+
+PDF function:
+
+![pdf function](https://miro.medium.com/max/1342/1*XhNxPXLsU3Q-BzA4bXzZew.png)
+
+- left side: “The PDF of x given μ and σ²
+
+![example image](https://miro.medium.com/max/1346/1*P1ho8E4v6MSfXCZ5zKNFNQ.png)
+
+- In PDF at x = x is not the actual probability of x.
+  - probability of x taking on any specific value is actually 0!
+
+- The integral of the PDF over the sample space is 1.
+
+![pdfformula](https://miro.medium.com/max/850/1*Xgsk3qAICdosV55UnASzaA.png)
+
+- the area under the PDF represents the total probability of the Gaussian
+
+- continuous random variable’s cumulative distribution function (CDF)
+
+!(cdf)[https://miro.medium.com/max/1080/1*x8DdNm9OAbIufxKLtvO2XQ.png]
+
+- for a given value x, we’re taking the integral of the PDF from negative infinity to that value. So F(x) gives us the the area under the PDF for the interval negative infinity to x.
+
+- F(x) gives us P(x≤x).
+
+- use the CDF to determine the probability of any given range [a,b] by noticing that P(a≤x≤b) = F(b)-F(a).
+  - P(x=x) is equivalent to asking P(x≤x≤x) = F(x)-F(x) = 0.
+
+![cdf of gaussien](https://miro.medium.com/max/1340/1*Qns3LMbAsx-B6DGQFU2SYg.png)
 
 ## Requirements
 
