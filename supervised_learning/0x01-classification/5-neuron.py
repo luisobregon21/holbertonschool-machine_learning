@@ -13,17 +13,18 @@ class Neuron():
         '''
         class constructor
         :nx: number of input features to the neuron
+
+        W: The weights vector for the neuron.
+        b:`The bias for the neuron.
+        A: The activated output of the neuron (prediction).
         '''
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
         if nx < 1:
             raise ValueError("nx must be a positive integer")
 
-        # The weights vector for the neuron.
-        self.__W = np.random.randn(nx).reshape(1, nx)
-        # The bias for the neuron.
+        self.__W = np.random.randn(1, nx)
         self.__b = 0
-        # The activated output of the neuron (prediction).
         self.__A = 0
 
     @property
@@ -48,7 +49,7 @@ class Neuron():
         (nx is the # of input features to the neuron, m is the # of examples)
         '''
         fwp = np.matmul(self.__W, X) + self.__b
-        # sigmoid activation
+
         self.__A = 1/(1+np.exp(-fwp))
         return self.__A
 
@@ -60,10 +61,12 @@ class Neuron():
 
         :A: is a numpy.ndarray with shape (1, m) containing the
         activated output of the neuron for each example
+
+        to avoid division by zero error: 1.0000001 - A
         '''
 
-        # to avoid division by zero error: 1.0000001 - A
         m = Y.shape[1]
+
         total_cost = -(1 / m) * np.sum(np.multiply(Y, np.log(A)) +
                                        np.multiply(1 - Y,
                                                    np.log(1.0000001 - A)))
@@ -79,11 +82,14 @@ class Neuron():
 
         :Y: is a numpy.ndarray with shape (1, m) that contains
         the correct labels for the input data
+
+        The label values should be 1 if the output
+        of the network is >= 0.5 and 0 otherwise
+
         '''
+
         self.forward_prop(X)
         cost = self.cost(Y, self.__A)
-        # The label values should be 1 if the output
-        # of the network is >= 0.5 and 0 otherwise
         prediction = np.where(self.__A >= 0.5, 1, 0)
         return prediction, cost
 
@@ -102,10 +108,10 @@ class Neuron():
 
         alpha is the learning rate
         '''
+
         m = Y.shape[1]
-        derivative_z = A - Y
-        print()
-        dW = np.matmul(X, derivative_z) / m
-        db = np.sum(derivative_z) / m
-        self.__W = self.__W - (dW * alpha)
+        dw = np.matmul(A - Y, X.T) / m
+        db = np.sum(A - Y) / m
+
+        self.__W = self.__W - (alpha * dw)
         self.__b = self.__b - (alpha * db)

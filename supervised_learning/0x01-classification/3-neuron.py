@@ -13,17 +13,18 @@ class Neuron():
         '''
         class constructor
         :nx: number of input features to the neuron
+
+        W: The weights vector for the neuron.
+        b:`The bias for the neuron.
+        A: The activated output of the neuron (prediction).
         '''
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
         if nx < 1:
             raise ValueError("nx must be a positive integer")
 
-        # The weights vector for the neuron.
-        self.__W = np.random.randn(nx).reshape(1, nx)
-        # The bias for the neuron.
+        self.__W = np.random.randn(1, nx)
         self.__b = 0
-        # The activated output of the neuron (prediction).
         self.__A = 0
 
     @property
@@ -60,9 +61,10 @@ class Neuron():
 
         :A: is a numpy.ndarray with shape (1, m) containing the
         activated output of the neuron for each example
+
+        to avoid division by zero error: 1.0000001 - A
         '''
 
-        # to avoid division by zero error: 1.0000001 - A
         m = Y.shape[1]
 
         total_cost = -(1 / m) * np.sum(np.multiply(Y, np.log(A)) +
