@@ -141,14 +141,8 @@ class Neuron():
         if alpha < 0:
             raise ValueError("alpha must be a positive integer")
 
-        m = Y.shape[1]
-        Cost = []
-        iteration = []
         for training in range(iterations):
-            a, cost = self.evaluate(X, Y)
             self.__A = self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A, alpha)
 
-            Cost.append(cost)
-            iteration.append(training)
-        return Cost, iteration
+        return self.evaluate(X, Y)
