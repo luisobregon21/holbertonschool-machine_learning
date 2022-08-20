@@ -13,15 +13,16 @@ class Neuron():
         '''
         class constructor
         :nx: number of input features to the neuron
+
+        W: The weights vector for the neuron.
+        b:`The bias for the neuron.
+        A: The activated output of the neuron (prediction).
         '''
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
         if nx < 1:
             raise ValueError("nx must be a positive integer")
 
-        # The weights vector for the neuron.
         self.W = np.random.randn(1, nx)
-        # The bias for the neuron.
         self.b = 0
-        # The activated output of the neuron (prediction).
         self.A = 0
