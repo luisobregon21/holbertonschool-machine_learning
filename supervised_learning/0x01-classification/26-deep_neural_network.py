@@ -3,7 +3,6 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import pickle
 
 
 class DeepNeuralNetwork():
@@ -180,6 +179,7 @@ class DeepNeuralNetwork():
         Saves the instance object to a file in pickle format
         :filename: is the file to which the object should be saved
         '''
+        import pickle
         if type(filename) is not str:
             return
         if not filename.endswith('.pkl'):
@@ -193,6 +193,7 @@ class DeepNeuralNetwork():
         '''
         Loads a pickled DeepNeuralNetwork object
         '''
+        import pickle
         try:
             with open(filename, 'rb') as file:
                 return pickle.load(file)
