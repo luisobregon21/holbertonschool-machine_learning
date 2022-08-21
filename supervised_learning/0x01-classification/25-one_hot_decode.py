@@ -10,7 +10,6 @@ def one_hot_decode(one_hot):
     :Returns: a numpy.ndarray with shape (m,) containing the numeric labels
     for each example, or None on failure
     '''
-    try:
+    if type(one_hot) is np.ndarray and len(one_hot.shape) == 2:
         return np.argmax(one_hot, axis=0)
-    except Exception as e:
-        return None
+    return None
