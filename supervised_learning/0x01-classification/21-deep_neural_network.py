@@ -111,7 +111,8 @@ class DeepNeuralNetwork():
         Calculates one pass of gradient descent on the neural network
         :Y: numpy.ndarray with shape (1, m) that contains
         the correct labels for the input data
-        :cache: dictionary containing all the intermediary values of the network
+        :cache: dictionary containing all the
+        intermediary values of the network
         :alpha: learning rate
         '''
         m = Y.shape[1]
