@@ -83,6 +83,7 @@ What is a moving average? How do you implement it?
 What is gradient descent with momentum? How do you implement it?
 
 - Momentum is a method that helps accelerate SGD in the relevant direction
+
 ![SGD NoMomentum](https://ruder.io/content/images/2015/12/without_momentum.gif) ![SGD momentum](https://ruder.io/content/images/2015/12/with_momentum.gif)
 
 - adds  a fraction γ of the update vector of the past time step to the current update vector.
