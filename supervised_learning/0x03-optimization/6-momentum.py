@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''training operation for a neural network in tensorflow'''
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def create_momentum_op(loss, alpha, beta1):
@@ -12,4 +12,5 @@ def create_momentum_op(loss, alpha, beta1):
     :alpha: is the learning rate
     :beta1: is the momentum weight
     '''
-    return tf.train.MomentumOptimizer(alpha, beta1).minimize(loss)
+    optimizer = tf.train.MomentumOptimizer(alpha, beta1).minimize(loss)
+    return optimizer
