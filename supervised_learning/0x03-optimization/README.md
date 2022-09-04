@@ -110,3 +110,9 @@ What is batch normalization? How do you implement it?
 - makes normalization a part of the model architecture and performing the normalization for each training mini-batch.
 - By ensuring the activations of each layer are normalized, we can simplify the overall loss function topology.
 ![batch normalization](https://www.jeremyjordan.me/content/images/2018/01/Screen-Shot-2018-01-24-at-1.16.09-PM.png)
+
+>**_NOTE_**: To get rid of Tensorflow error ...
+> add the following to script
+> ```tf.get_logger().setLevel('ERROR')```
+> Run the script with the command below
+> ```TF_CPP_MIN_LOG_LEVEL=3 ./6-main.py```
