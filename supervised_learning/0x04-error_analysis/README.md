@@ -64,6 +64,9 @@ What is bias? variance?
 
 What is irreducible error?
 
+- the error that we can not remove with our model, or with any model.
+- The error is caused by elements outside our control
+
 What is Bayes error?
 
 - Bayes error rate is the lowest possible error rate for any classifier of a random outcome and is analogous to the irreducible error.
@@ -72,7 +75,7 @@ How can you approximate Bayes error?
 
 - Bayes Classifier is defined as: 𝑎𝑟𝑔𝑚𝑖𝑛𝑓=𝐶𝑜𝑠𝑡(𝑓)
 
-How to calculate bias and variance
+[How to calculate bias and variance](http://rasbt.github.io/mlxtend/user_guide/evaluate/bias_variance_decomp/)
 
 How to create a confusion matrix
 
@@ -86,3 +89,10 @@ How to create a confusion matrix
 - Organize the numbers as followed:
   - Expected down the side: Each row of the matrix corresponds to a predicted class.
   - Predicted across the top: Each column of the matrix corresponds to an actual class.
+
+#### WHAT TO DO IN THE SITUATION
+
+- High Bias, High Variance -> Train more, Try a different architecture, Build a deeper network
+- High Bias, Low Variance -> Train more, Try a different architecture, Build a deeper network
+- Low Bias, High Variance -> Try a different architecture, Get more data, Use regularization
+- Low Bias, Low Variance -> Nothing
