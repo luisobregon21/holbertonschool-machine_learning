@@ -19,31 +19,35 @@ What is a model?
 
 How to instantiate a model (2 ways):
 
-- create an instance of the class. 
-- Or create an array of layers and pass it to the constructor of the model.
+1. With the "Functional API", where you start from Input, you chain layer calls to specify the model's forward pass, and finally you create your model from inputs and outputs:
 
 ```python
-model = keras.Sequential()
-model.add(layers.Dense(2, activation="relu"))
-model.add(layers.Dense(3, activation="relu"))
-model.add(layers.Dense(4))
+import tensorflow as tf
+
+inputs = tf.keras.Input(shape=(3,))
+x = tf.keras.layers.Dense(4, activation=tf.nn.relu)(inputs)
+outputs = tf.keras.layers.Dense(5, activation=tf.nn.softmax)(x)
+model = tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 
+2. A new Functional API model can also be created by using the intermediate tensors. This enables you to quickly extract sub-components of the model.
+
 ```python
-# Define Sequential model with 3 layers
-model = keras.Sequential(
-    [
-        layers.Dense(2, activation="relu", name="layer1"),
-        layers.Dense(3, activation="relu", name="layer2"),
-        layers.Dense(4, name="layer3"),
-    ]
-)
+inputs = keras.Input(shape=(None, None, 3))
+processed = keras.layers.RandomCrop(width=32, height=32)(inputs)
+conv = keras.layers.Conv2D(filters=2, kernel_size=3)(processed)
+pooling = keras.layers.GlobalAveragePooling2D()(conv)
+feature = keras.layers.Dense(10)(pooling)
+
+full_model = keras.Model(inputs, feature)
+backbone = keras.Model(processed, conv)
+activations = keras.Model(conv, feature)
 ```
 
 How to build a layer
 
-- add a layer after initiating the class, where each new line is a layer. 
-- What input shape it recieves 
+- add a layer after initiating the class, where each new line is a layer.
+- What input shape it recieves
 - show the role from input to prediction
 
 ```python
@@ -57,12 +61,15 @@ How to add dropout to a layer:
 How to add batch normalization:
 
 How to compile a model:
+
 ```python
 model.compile(...)
 ```
+
 How to optimize a model:
 
 How to fit a model:
+
 ```python
 history = model.fit(x_train, y_train, batch_size=64, epochs=2, validation_split=0.2)
 ```
