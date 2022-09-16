@@ -23,20 +23,17 @@ def convolve_grayscale_padding(images, kernel, padding):
     '''
     m, h, w = images.shape
     kh, kw = kernel.shape
-    ph, pw = padding
-
-    output_height = h + 2 * ph - kh + 1
-    output_width = w + 2 * pw - kw + 1
-
-    # convolutional dimension
-    conv_image = np.zeros((m, output_height, output_width))
-
-    # padded images
-    padded_images = np.pad(images, pad_width=((0, 0), (ph, ph), (pw, pw)),
-                           mode='constant', constant_values=0)
-    for y in range(h):
-        for x in range(w):
-            image_slice = padded_images[:, y:y+kh, x:x+kw]
-            # change values of zero's array
-            conv_image[:, y, x] = np.tensordot(image_slice, kernel)
-    return conv_image
+    ph, pw = padding[0], padding[1]
+    oh = h + 2 * ph - kh + 1
+    ow = w + 2 * pw - kw + 1
+    dim = (m, oh, ow)
+    out = np.zeros(dim)
+    padded = np.pad(images, pad_width=((0, 0), (ph, ph), (pw, pw)),
+                    mode='constant', constant_values=0)
+    for y in range(dim[1]):
+        for x in range(dim[2]):
+            y = y + kh
+            x = x + kw
+            M = padded[:, y:y, x:x]
+            out[:, y, x] = np.tensordot(M, kernel)
+    return out
