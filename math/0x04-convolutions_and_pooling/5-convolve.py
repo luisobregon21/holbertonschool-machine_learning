@@ -33,8 +33,8 @@ def convolve(images, kernels, padding='same', stride=(1, 1)):
     if padding == 'valid':
         ph = pw = 0
     elif padding == 'same':
-        ph = int((((h - 1) * sh + kh - h) / 2) + (kh % 2 == 0))
-        pw = int((((w - 1) * sw + kw - w) / 2) + (kw % 2 == 0))
+        ph = int((((h - 1) * sh + kh - h) / 2) + 1)
+        pw = int((((w - 1) * sw + kw - w) / 2) + 1)
     else:
         ph, pw = padding
 
@@ -54,6 +54,7 @@ def convolve(images, kernels, padding='same', stride=(1, 1)):
             for z in range(nc):
                 # change values of zero's array
                 conv_image[:, y, x, z] = np.tensordot(
-                    image_slice, kernels[:, y, x, z], axes=c
+                    image_slice, kernels[:, :, :, z],
+                    axes=c
                     )
     return conv_image
