@@ -23,10 +23,10 @@ def convolve_grayscale_valid(images, kernel):
     conv_h = (h - kh) + 1
 
     # convolutional dimension
-    conv_image = np.zeros((m, conv_w, conv_h))
+    conv_image = np.zeros((m, conv_h, conv_w))
 
-    for y in range(conv_image[1]):
-        for x in range(conv_image[2]):
+    for y in range(conv_h):
+        for x in range(conv_w):
             image_slice = images[:, y:y+kh, x:x+kw]
             # change values of zero's array
             conv_image[:, y, x] = np.tensordot(image_slice, kernel)
