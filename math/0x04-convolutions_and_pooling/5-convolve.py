@@ -48,11 +48,12 @@ def convolve(images, kernels, padding='same', stride=(1, 1)):
                                               (0, 0)), mode='constant')
     for y in range(oh):
         for x in range(ow):
+            image_slice = padded_images[:,
+                                        (y*sh):(y*sh)+kh,
+                                        (x*sw):(x*sw)+kw, :]
             for z in range(nc):
-                image_slice = padded_images[:, (y*sh):(y*sh)+kh,
-                                            (x*sw):(x*sw)+kw, :]
                 # change values of zero's array
                 conv_image[:, y, x, z] = np.tensordot(
-                    image_slice, kernels[:, :, :, z], axes=c
+                    image_slice, kernels[:, y, x, z], axes=c
                     )
     return conv_image
