@@ -4,7 +4,7 @@
 import tensorflow.compat.v1 as tf
 
 
-def lenet5(x,y):
+def lenet5(x, y):
     '''
     builds a modified version of the LeNet-5
     architecture usinhg tensorflow.
@@ -15,7 +15,7 @@ def lenet5(x,y):
     the one-hot labels for the network
     '''
     init = tf.keras.initializers.VarianceScaling(scale=2.0)
-    # relu activation 
+    # relu activation
     activation = tf.nn.relu
     # Convolutional layer with 6 kernels of shape 5x5 with same padding
     conv1 = tf.layers.Conv2D(filters=6, kernel_size=5, padding='same',
