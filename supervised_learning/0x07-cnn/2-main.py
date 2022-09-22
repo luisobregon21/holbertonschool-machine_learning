@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+import numpy as np
 conv_backward = __import__('2-conv_backward').conv_backward
 
 if __name__ == "__main__":
