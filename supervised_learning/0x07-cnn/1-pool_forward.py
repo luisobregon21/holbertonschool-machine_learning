@@ -35,8 +35,8 @@ def pool_forward(A_prev, kernel_shape, stride=(1, 1), mode='max'):
     # convolutional dimension
     conv_image = np.zeros((m, oh, ow, c_prev))
 
-    for y in range(oh):
-        for x in range(ow):
+    for x in range(oh):
+        for y in range(ow):
             if mode == 'max':
                 conv_image[:, x, y] = (np.max(A_prev[:,
                                                      x*sh:((x*sh)+kh),
