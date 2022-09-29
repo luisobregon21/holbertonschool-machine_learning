@@ -21,28 +21,23 @@ def projection_block(A_prev, filters, s=2):
                             activation=activation, strides=s,
                             kernel_initializer=init)(A_prev)
 
-    
     batch_norm = K.layers.BatchNormalization(axis=3)(conv1)
 
     activ = K.layers.Activation(activation)(batch_norm)
-
-    conv2D_1  = K.layers.Conv2D(filters=F3, kernel_size=3, padding='same',
-                                kernel_initializer=init)(activ)
+    conv2D_1 = K.layers.Conv2D(filters=F3, kernel_size=3, padding='same',
+                               kernel_initializer=init)(activ)
 
     batch_norm1 = K.layers.BatchNormalization(axis=3)(conv2D_1)
-
     activ_1 = K.layers.Activation(activation)(batch_norm1)
+    conv2D_2 = K.layers.Conv2D(filters=F12, kernel_size=1, padding='same',
+                               kernel_initializer=init)(activ_1)
 
-    conv2D_2  = K.layers.Conv2D(filters=F12, kernel_size=1, padding='same',
-                                kernel_initializer=init)(activ_1)
-
-    conv2D_3  = K.layers.Conv2D(filters=F12, kernel_size=1, padding='same',
-                                strides=s,
-                                kernel_initializer=init)(A_prev)
-
+    conv2D_3 = K.layers.Conv2D(filters=F12, kernel_size=1, padding='same',
+                               strides=s,
+                               kernel_initializer=init)(A_prev)
     batch_norm2 = K.layers.BatchNormalization(axis=3)(conv2D_2)
-
     batch_norm3 = K.layers.BatchNormalization(axis=3)(conv2D_3)
+
     add = K.layers.Add()([batch_norm2, batch_norm3])
     activation = K.layers.Activation(activation)(add)
 
