@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-''' perform PCA on a dataset '''
+''' perform Principal Component Analysis on a dataset '''
+
+import numpy as np
 
 
 def pca(X, var=0.95):
@@ -15,3 +17,10 @@ def pca(X, var=0.95):
     Returns: the weights matrix, W, that
     maintains var fraction of X‘s original variance
     '''
+    # U singular_v, Sigma singular_v, Vh right singular_v
+    u, Sigma, vh = np.linalg.svd(X, full_matrices=False)
+    cumulative_var = np.cumsum(Sigma) / np.sum(Sigma)
+    r = (np.argwhere(cumulative_var >= var))[0, 0]
+    w = vh.T
+    wr = w[:, :r + 1]
+    return wr

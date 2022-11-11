@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 ''' perform PCA on a dataset '''
 
+import numpy as np
+
 
 def pca(X, ndim):
     '''
@@ -13,3 +15,9 @@ def pca(X, ndim):
     Returns: T, a numpy.ndarray of shape (n, ndim)
     containing the transformed version of X
     '''
+    X_mean = X - np.mean(X, axis=0)
+    u, Sigma, vh = np.linalg.svd(X_mean)
+    W = vh.T
+    Wr = W[:, :ndim]
+    T = np.dot(X_mean, Wr)
+    return T
