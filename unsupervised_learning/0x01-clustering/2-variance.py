@@ -12,7 +12,6 @@ def variance(X, C):
     for each cluster
     '''
 
-    
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None
     if not isinstance(C, np.ndarray) or len(C.shape) != 2:
