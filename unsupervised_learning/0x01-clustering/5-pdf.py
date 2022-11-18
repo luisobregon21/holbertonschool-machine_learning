@@ -13,7 +13,6 @@ def pdf(X, m, S):
         distribution
     '''
 
-    
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None
     if not isinstance(m, np.ndarray) or len(m.shape) != 1:
@@ -47,6 +46,6 @@ def pdf(X, m, S):
 
     part_2_2 = np.exp(part_2_1 / -2)
     pdf = part_2_2 / part_1_dem
-    
+
     P = np.where(pdf < 1e-300, 1e-300, pdf)
     return P
