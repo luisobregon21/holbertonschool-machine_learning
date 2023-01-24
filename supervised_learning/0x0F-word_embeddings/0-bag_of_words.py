@@ -13,6 +13,7 @@ def bag_of_words(sentences, vocab=None):
     # Learn the vocabulary dictionary and return document-term matrix.
     X = vectorizer.fit_transform(sentences)
     if vocab is None:
-        vocab = vectorizer.get_feature_names_out()
-    embedding = X.toarray()
+        vocab = []
+    embedding = vectorizer.fit_transform(sentences).toarray()
+    vocab = list(vectorizer.get_feature_names())
     return embedding, vocab

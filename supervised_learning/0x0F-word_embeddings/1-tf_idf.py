@@ -9,9 +9,9 @@ def tf_idf(sentences, vocab=None):
     :sentences: is a list of sentences to analyze
     :vocab: is a list of the vocabulary words to use for the analysis
     '''
-    vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(sentences)
+    vectorizer = TfidfVectorizer(vocabulary=vocab)
     if vocab is None:
-        vocab = vectorizer.get_feature_names_out()
-    embedding = X.toarray()
+        vocab = []
+    embedding = vectorizer.fit_transform(sentences).toarray()
+    vocab = list(vectorizer.get_feature_names())
     return embedding, vocab
