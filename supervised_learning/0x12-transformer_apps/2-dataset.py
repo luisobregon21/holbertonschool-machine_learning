@@ -4,7 +4,7 @@ import tensorflow.compat.v2 as tf
 import tensorflow_datasets as tfds
 
 
-class Dataset():
+class Dataset:
     ''' loads and preps a dataset for machine translation '''
 
     def __init__(self):
