@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-''' Dataset class '''
-import tensorflow.compat.v2 as tf
-import tensorflow_datasets as tfds
-
-
 class Dataset:
     ''' loads and preps a dataset for machine translation '''
 
-    def __init__(self):
-        ''' constructor '''
+    def __init__(self, batch_size, max_len):
+        '''
+        :batch_size: batch size for training/validation
+        :max_len: maximum number of tokens allowed per example sentence
+        '''
         data_train = tfds.load("ted_hrlr_translate/pt_to_en",
                                split="train",
                                as_supervised=True)
@@ -19,6 +16,31 @@ class Dataset:
             data_train)
         self.data_train = data_train.map(self.tf_encode)
         self.data_valid = data_valid.map(self.tf_encode)
+
+        def filter_max_length(x, y, max_len=max_len):
+            """Filter data by max_len."""
+            filtered = tf.logical_and(tf.size(x) <= max_len,
+                                      tf.size(y) <= max_len)
+            return filtered
+
+        # filter training and validation by max_len number of tokens
+        self.data_train = self.data_train.filter(filter_max_length)
+        self.data_valid = self.data_valid.filter(filter_max_length)
+
+        # increase performance by caching training dataset
+        self.data_train = self.data_train.cache()
+
+        # shuffle the training dataset
+        data_size = sum(1 for data in self.data_train)
+        self.data_train = self.data_train.shuffle(data_size)
+
+        # split training and validation datasets into padded batches
+        self.data_train = self.data_train.padded_batch(batch_size)
+        self.data_valid = self.data_valid.padded_batch(batch_size)
+
+        # increase performance by prefetching training dataset
+        self.data_train = self.data_train.prefetch(
+            tf.data.experimental.AUTOTUNE)
 
     def tokenize_dataset(self, data):
         '''
