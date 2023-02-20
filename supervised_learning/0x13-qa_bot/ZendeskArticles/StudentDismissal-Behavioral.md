@@ -1,0 +1,5 @@
+Dismissal - Behavioral Issues
+If a student is having behavioral issues, they can be given a one-time warning (prior to dismissal), or, could be immediately dismissed and asked to leave the premises, dependent upon the nature/severity of the issue, and/or at the discretion of the Institution Representative. This can include, but is not limited to: theft, smoking on the premises, verbal, physical, sexual inappropriateness and/or aggression.
+
+Dismissal - Absenteeism & Lack of Communication
+When a student becomes absent without explanation, does not reply to email, and misses a mandatory scheduled follow-up conversation, they will be dismissed. Typically there will be no option to restart or retake the trimester, however in extraordinary situations this may be considered. As an example, if a student were to get lost hiking and spent many days in the wilderness before they were rescued by helicopter, we could make an exception if there was sufficient evidence provided.

@@ -1,0 +1,10 @@
+Professional Advisors Overview
+Professional advisors are tech industry veterans who believe in inclusive, empowered education and actively advance the Holberton mission. Their contributions to the community are as diverse as the individuals themselves, and we’re appreciative of all the varying ways they enrich the Holberton experience. 
+
+Curriculum Development
+Our Advisors are at the core of curriculum development. Before any curriculum is created, Professional Advisors are interviewed to determine the industry trends and needs for a particular topic. From there, they help to create a high-level outline, guiding what foundational information is absolutely necessary for students and what languages/tools are crucial to the industry. Once the curriculum is developed, they regularly review projects to ensure that they are up to date and relevant to industry needs. Without our Professional Advisors, the Holberton curriculum would not be nearly as effective as it is. 
+Student Interactions
+In addition to curriculum development, many Professional Advisors come to Holberton School to directly interact with students. Some of the activities that our Professional Advisors participate in include fireside chats about career advice, presentations on up and coming technologies, resume reviews, leading extracurricular projects, and mentoring portfolio projects.
+
+Networking
+At Holberton School, we strive to help you succeed with both hard and soft skills. When it comes to networking, knowing how to navigate best practices is important. While Holberton School has access to industry professionals, it is important to remember that these folks are working full-time jobs. In order to cultivate genuine relationships with potential career mentors, we stress that Holberton students must follow The Framework before reaching out to these professionals.

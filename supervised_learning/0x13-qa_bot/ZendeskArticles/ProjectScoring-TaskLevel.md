@@ -1,0 +1,4 @@
+Project Scoring - Mandatory vs Advanced Tasks
+Mandatory tasks are just what they sound like: tasks that are mandatory to complete for the project. Advanced tasks, on the other hand, are purely optional and are scored separately out of 100%. This advanced score will be added to the mandatory score, making the total possible grade for the project 200%. However, the advanced score is weighted by the mandatory score. This means that if a student does not earn 100% on the mandatory tasks, their advanced score will be negatively impacted. This is to reinforce the importance of mandatory tasks.
+Example: If you completed a project and received a mandatory score of 80% and an advanced score of 100%. Your overall score would be calculated as follows:
+Overall Score = Mandatory Score + (Mandatory Score * Advanced Score)Overall Score = 80% + (80% * 100%) = 160%

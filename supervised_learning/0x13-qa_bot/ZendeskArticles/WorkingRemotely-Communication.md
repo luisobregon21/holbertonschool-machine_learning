@@ -1,0 +1,6 @@
+Communication 
+Do not be afraid to over communicate with your cohort or the staff as it is better to have done so to gain a clear understanding of something rather than not. There are many different tools you can use to communicate with your peers, including Slack and Google Hangouts, and we advise you take advantage of them now more than ever while working from home. 
+If you are working on a project with a partner, we encourage you to call or video chat them whenever you have a question or need clarification on something. It is far easier to talk to somebody when you can see and hear them than when having to talk to them via messaging. Miscommunications will happen, but to cut down on this, please be sure you are doing your part to communicate with your peers.  
+Slack channels are a great avenue if you are looking for assistance or advice from your cohort or the SF Holberton community at large. These are great spaces to get community input with any questions or ideas you may have.
+Remote Meetings
+When joining remote meetings, best practice is to have your webcam on and to but your mic unless you are speaking. This is so there is better communication between individuals and so you can still have face-to-face interactions even while working remotely.

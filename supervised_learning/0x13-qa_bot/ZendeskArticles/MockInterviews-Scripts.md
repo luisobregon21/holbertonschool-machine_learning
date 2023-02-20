@@ -1,0 +1,3 @@
+Mock Interview Scripts
+Each student in a pair will receive a different script to interview their partner. These scripts are accessed via the intranet. The interviewer will ask a set of questions and score the answers.
+The script is divided into two parts: a conversation and the technical tests. Each of those parts comes with a set of questions, a point total for each question, and a maximum duration. The intranet will keep time for you.

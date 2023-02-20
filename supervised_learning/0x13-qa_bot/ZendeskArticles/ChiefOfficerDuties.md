@@ -1,0 +1,9 @@
+The roles of the Chief Officers are central in ensuring that the Holberton environment maintains cleanliness, professionalism and is conducive to learning. Chief Officers are designated randomly each week and an email is sent to notify students of their duties a week in advance. The Chief Officer assignments can be found on the Intranet's main page. The responsibilities are assigned to the newest active cohort to join the Holberton campus.
+Important: Although the Chief Officers are responsible for their designated tasks, it is not intended for them to complete the tasks by themselves. The officer may ask other students for help to ensure that the job is completed. Delegating tasks to other students is a great way to maintain a positive attitude and encourage personal responsibility.
+If a student cannot function as their designated chief officer role, they may swap role assignments with someone in their own cohort. In the rare case of needing to swap with a student from another cohort, this needs to be done manually by a staff member.
+The first time a student fulfills the role's duties, they receive a +5% professional score. Upon subsequent assignments, a student will not receive a boost to their professional score, but they will receive a -5% professional score for each time their duty is not fulfilled. It is to Staff members' discretion whether the role has been fulfilled.
+Below are the lists of duties that each Chief Officer is to be aware of during the week of their assignment:
+Chief Kitchen Officer
+Chief Open-Space Officer
+Chief Audio/Video Officer
+Chief Feedback Officer

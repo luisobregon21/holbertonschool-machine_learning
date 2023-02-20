@@ -1,0 +1,2 @@
+Stand Up is a meeting that takes place daily on campus at the same specified time. It is an opportunity for staff and students to make announcements pertinent to the community. Each stand up will be live-streamed and available for viewing through the intranet. 
+It is mandatory for all students on campus to attend Stand Up. Students who are on campus, but not present in the stand up area, are at risk for a deduction to their professionalism score.

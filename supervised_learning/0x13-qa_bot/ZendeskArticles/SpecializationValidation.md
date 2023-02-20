@@ -1,0 +1,4 @@
+Specialization Validation Overview
+Once a student enters their Specialization Year, they have the option to either study the Full-Time Curriculum (See: Specializations) to validate the program. To validate the Curriculum Specialization students must meet the minimum Global Score. 
+When a student has completed their studies in good standing, or, their recommendation letter has been accepted by the Institution Representative, the student will receive an email confirming their validation of the Specialization Year, in addition to a Certificate of Completion.  
+Students who have validated their Specialization Year and completed the program will gain access to the entire curriculum to work on at the standard pace with a scheduled cohort and/or at their own leisure. In addition to the curriculum, they will also maintain access to Holberton's facilities, Slack, intranet, and email.
