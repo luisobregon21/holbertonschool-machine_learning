@@ -10,12 +10,14 @@ def availableShips(passengerCount):
     :passengerCount: number of passengers
     '''
     starships = []
-    r = requests.get('https://swapi-api.hbtn.io/api/starships').json()
-    while (r['next']):
-        for ship in r['results']:
-            if ship['passengers'].isdigit() is True:
-                if int(ship['passengers']) >= passengerCount:
-                    starships.append(ship['name'])
-        r = requests.get(r['next']).json()
-
+    url = 'https://swapi-api.hbtn.io/api/starships/'
+    while url is not None:
+        response = requests.get(url,
+                                headers={'Accept': 'application/json'},
+                                params={"term": 'starships'})
+        for ship in response.json()['results']:
+            passenger = ship['passengers'].replace(',', '')
+            if passenger.isnumeric() and int(passenger) >= passengerCount:
+                starships.append(ship['name'])
+        url = response.json()['next']
     return starships
